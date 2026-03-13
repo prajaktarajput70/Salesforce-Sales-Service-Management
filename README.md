@@ -1,93 +1,251 @@
-Salesforce Admin Project – Project Management System
- Project Overview
+# Salesforce Admin Project – Project Management System
 
-This project demonstrates Salesforce Admin concepts by building a Project Management System.
-It includes custom objects, fields, record types, page layouts, relationships, validation rules, reports, and dashboards.
+## Project Overview
 
-Technologies Used
+This project demonstrates Salesforce Admin concepts by building a **Project Management System**.
+The system helps manage projects, resources, and supplies using Salesforce customization features such as custom objects, record types, page layouts, relationships, validation rules, reports, and dashboards.
 
-Salesforce Lightning Platform
+---
 
-Custom Objects
+## Platform Used
 
-Record Types
+* Salesforce Lightning Platform
+* CRM Customization Features
 
-Page Layouts
+---
 
-Validation Rules
+## Project Implementation (Day-wise)
 
-Reports & Dashboards
+### Day 1 – Custom Objects & Fields
 
- Project Implementation (Day-Wise)
-Day 1 – Custom Objects & Fields
+Created Custom Objects:
 
-Created custom objects:
+* Project
+* Human Resource
+* Supply
 
-Project
+Fields Created
 
-Human Resource
+Project Object:
 
-Supply
+* Project Name (Text)
+* Project Status (Picklist – Prospecting, Ongoing, Completed)
+* Start Date (Date)
+* Project Type (Picklist)
+* Project Manager (Text)
+* Phone (Phone)
+* Email (Email)
+* Website (URL)
 
-Fields created for project tracking and resource management.
+Project Type Values:
 
-Day 2 – Tabs & Lightning Application
+* DevOps
+* Blockchain
+* Salesforce
+* Event Planning Services
+* Consulting Services
+* Marketing Services
 
-Created custom tabs for:
+Human Resource Object:
 
-Project
+* Resource Name (Text)
+* Quantity (Number)
+* Utilization (Percent)
 
-Human Resource
+Supply Object:
 
-Supply
+* Supply Name (Text)
+* Unit Cost (Currency)
 
-Built a Lightning App:
-Project Management App
+---
 
-Day 3 – Record Types
+### Day 2 – Tabs & Lightning Application
 
-Created record types for the Project object:
+Created Custom Tabs:
 
-IT
+* Project
+* Human Resource
+* Supply
 
-Infrastructure
+Created Lightning App:
+**Project Management Application**
 
-Different project types were assigned to each record type.
+Added Tabs:
 
-Day 4 – Page Layout Customization
+* Project
+* Human Resource
+* Supply
 
-Customized layouts for different record types.
+---
 
-IT Layout
+### Day 3 – Record Types
 
-Project Name
+Created Record Types on Project Object.
 
-Project Status
+IT Record Type
+Allowed Project Types:
 
-Start Date
+* DevOps
+* Blockchain
+* Salesforce
 
-Project Type
+Infrastructure Record Type
+Allowed Project Types:
 
-Website (Mandatory)
+* Event Planning Services
+* Consulting Services
+* Marketing Services
 
-Infrastructure Layout
+---
 
-Project Details Section
+### Day 4 – Page Layout Customization
 
-Contact Information Section
+IT Page Layout Fields:
 
- Key Features
+* Project Name
+* Project Status
+* Start Date
+* Project Type
+* Website (Mandatory)
 
-Custom Objects & Fields
+Infrastructure Page Layout
 
-Record Types
+Section 1 – Project Details
 
-Page Layout Customization
+* Project Name
+* Project Status
+* Start Date
+* Project Type
 
-Lightning Application
+Section 2 – Contact Information
 
-Data Validation
+* Project Manager
+* Phone
+* Email
+* Website
 
- Author
+---
+
+### Day 5 – Relationships & Roll-Up Summary Fields
+
+Relationship 1
+Human Resource → Project
+Type: Lookup Relationship
+
+Purpose:
+
+* Assign resources to projects
+* Track resource allocation
+
+Relationship 2
+Supply → Project
+Type: Lookup Relationship
+
+Purpose:
+
+* Allocate supplies to projects
+* Track supply usage
+
+Roll-Up Summary Fields (Project Object)
+
+1. Total Human Resources – COUNT
+2. Total Supplies – COUNT
+3. Total Supply Cost – SUM (Unit Cost)
+
+---
+
+### Day 6 – Validation Rules
+
+Start Date Validation
+Start date cannot be previous, today, or within next 5 days.
+
+Formula:
+Start_Date__c <= TODAY()+5
+
+Phone Number Validation
+Phone must be 10 digits and cannot start with 0,1,2,3,4,5.
+
+Formula:
+OR(
+LEN(Phone) <> 10,
+BEGINS(Phone,"0"),
+BEGINS(Phone,"1"),
+BEGINS(Phone,"2"),
+BEGINS(Phone,"3"),
+BEGINS(Phone,"4"),
+BEGINS(Phone,"5")
+)
+
+Utilization Validation
+Utilization cannot exceed 100%.
+
+Formula:
+Utilization__c > 100
+
+Resource Name Validation
+Only alphabets allowed.
+
+Formula:
+NOT(REGEX(Resource_Name__c , "^[A-Za-z ]+$"))
+
+---
+
+### Day 7 – Security Configuration
+
+Profiles Created:
+
+* Suppliers
+* People Management
+
+Security Settings:
+
+* Removed Project Object access
+* Login allowed between 10 AM – 3 PM (Weekdays)
+* Password expiry set to 30 days
+* Account lock after 3 incorrect attempts
+
+---
+
+### Day 8 – Reports
+
+Created Reports:
+
+* Projects with Human Resources
+* Projects with Supplies
+* Supply Cost per Project
+* Resource Utilization Report
+
+---
+
+### Day 9 – Dashboard
+
+Created Dashboard: **Project Management Dashboard**
+
+Dashboard Components:
+
+* Total Projects
+* Project Status Distribution
+* Resources per Project
+* Total Supply Cost
+
+---
+
+## Key Salesforce Features Used
+
+* Custom Objects
+* Custom Fields
+* Record Types
+* Page Layout Customization
+* Lookup Relationships
+* Roll-Up Summary Fields
+* Validation Rules
+* Lightning Application
+* Profiles & Security
+* Reports
+* Dashboards
+
+---
+
+## Author
 
 Prajakta Daryavsing Rajput
