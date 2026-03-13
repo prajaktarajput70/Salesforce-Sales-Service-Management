@@ -1,30 +1,93 @@
-# Salesforce-Sales-Service-Management
-Salesforce Admin project for Sales &amp; Service Management
-# Salesforce Admin Project – Sales & Service Management System
+Salesforce Admin Project – Project Management System
+ Project Overview
 
-## Project Overview
-This Salesforce project is designed to manage Sales and Service operations
-using standard Salesforce features and automation tools.
+This project demonstrates Salesforce Admin concepts by building a Project Management System.
+It includes custom objects, fields, record types, page layouts, relationships, validation rules, reports, and dashboards.
 
-## Features
-- Management of Accounts, Contacts, Opportunities, and Cases
-- Record-triggered flows to automate follow-up tasks and status updates
-- User access control using Profiles and Permission Sets
-- Page layout customization
-- Reports and Dashboards for sales and service tracking
+Technologies Used
 
-## Salesforce Concepts Used
-- Standard Objects: Account, Contact, Opportunity, Case
-- Automation: Record-Triggered Flows
-- Security: Users, Profiles, Permission Sets
-- Reports & Dashboards
-- Page Layouts
+Salesforce Lightning Platform
 
-## Tools Used
-- Salesforce Developer Org
-- Salesforce Setup
-- Trailhead
+Custom Objects
 
-## Author
-Prajakta Rajput
+Record Types
 
+Page Layouts
+
+Validation Rules
+
+Reports & Dashboards
+
+ Project Implementation (Day-Wise)
+Day 1 – Custom Objects & Fields
+
+Created custom objects:
+
+Project
+
+Human Resource
+
+Supply
+
+Fields created for project tracking and resource management.
+
+Day 2 – Tabs & Lightning Application
+
+Created custom tabs for:
+
+Project
+
+Human Resource
+
+Supply
+
+Built a Lightning App:
+Project Management App
+
+Day 3 – Record Types
+
+Created record types for the Project object:
+
+IT
+
+Infrastructure
+
+Different project types were assigned to each record type.
+
+Day 4 – Page Layout Customization
+
+Customized layouts for different record types.
+
+IT Layout
+
+Project Name
+
+Project Status
+
+Start Date
+
+Project Type
+
+Website (Mandatory)
+
+Infrastructure Layout
+
+Project Details Section
+
+Contact Information Section
+
+ Key Features
+
+Custom Objects & Fields
+
+Record Types
+
+Page Layout Customization
+
+Lightning Application
+
+Data Validation
+
+ Author
+
+Prajakta Daryavsing Rajput
